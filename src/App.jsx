@@ -10,55 +10,13 @@ import TaskList from './components/TaskList';
 import { Heart, Sparkles } from 'lucide-react';
 
 export default function App() {
-  const [tasks, setTasks] = useLocalStorage('cozy-tasks-v1', [
-    {
-      id: 'task-1',
-      title: 'Water my succulent plants 🪴',
-      description: 'Give them a small sip of room-temp water.',
-      dueDate: new Date().toISOString().split('T')[0],
-      priority: 'mild',
-      category: 'Personal 🧸',
-      completed: false,
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'task-2',
-      title: 'Read 5 pages of my cozy novel 📖',
-      description: 'Find a warm spot near the window.',
-      dueDate: new Date().toISOString().split('T')[0],
-      priority: 'medium',
-      category: 'Study 📚',
-      completed: false,
-      createdAt: new Date().toISOString()
-    },
-    {
-      id: 'task-3',
-      title: 'Design a cute Berd To-Do List app UI 🎨',
-      description: 'Use soft pastel colors and springy bounce dynamics.',
-      dueDate: new Date().toISOString().split('T')[0],
-      priority: 'spicy',
-      category: 'Work 💼',
-      completed: true,
-      createdAt: new Date().toISOString()
-    }
-  ]);
-  
-  const [theme, setTheme] = useLocalStorage('cozy-theme-v1', 'light');
+  const [tasks, setTasks] = useLocalStorage('cozy-tasks-v1', []);
   const [activeFilter, setActiveFilter] = useState('all');
 
-  // Synchronize HTML element class for Tailwind dark selector
+  // Enforce Cozy Dark Theme always
   useEffect(() => {
-    const root = window.document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
-  };
+    window.document.documentElement.classList.add('dark');
+  }, []);
 
   const handleAddTask = (newTaskData) => {
     const newTask = {
@@ -114,7 +72,7 @@ export default function App() {
           
           {/* Left panel: Header, Stats and Form */}
           <div className="lg:col-span-2 flex flex-col gap-6">
-            <Header theme={theme} toggleTheme={toggleTheme} />
+            <Header />
             
             <TaskForm onAddTask={handleAddTask} />
             

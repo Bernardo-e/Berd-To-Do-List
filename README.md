@@ -1,8 +1,8 @@
-# 🐦 Berd's Cozy To-Do List
+# 🐦 Berd's Cozy To-Do List (Cozy Dark Theme Edition)
 
-A beautiful, charming, and highly interactive task manager designed with a pastel cozy aesthetic, smooth spring physics animations, and persistent storage. Crafted with love by **Berd**.
+A beautiful, charming, and highly interactive task manager designed exclusively with a custom **Cozy Dark Theme** aesthetic, smooth spring physics animations, and persistent storage. Crafted with love by **Berd**.
 
-This project provides a delightful and visually calming productivity workspace, combining subtle micro-interactions, dark/light modes, progress analytics, and satisfying rewards upon task completion.
+This project provides a delightful and visually calming dark mode productivity workspace, combining subtle micro-interactions, progress analytics, and satisfying confetti rewards upon task completion.
 
 ---
 
@@ -10,10 +10,11 @@ This project provides a delightful and visually calming productivity workspace, 
 
 Every feature in this app was thoughtfully selected and implemented to create the ultimate cozy planning environment:
 
-### 🎨 Beautiful Cozy Aesthetic
-*   **Harmonious Pastel Color Palette:** Custom-defined color design with soft lavender, mint, coral, warm sky blue, cozy pink, and soothing background colors.
-*   **Premium Custom Typography:** Styled using the elegant **Outfit** and **Quicksand** Google Fonts for a gentle, friendly reading experience.
-*   **Custom Scrollbars:** Rounded, delicate scrollbars that match the light and dark theme aesthetics perfectly.
+### 🌌 Dedicated Cozy Dark Theme
+*   **Aesthetic Night-sky Palette:** A permanently enabled dark theme using deep violet-grays, soft pastel lavender, mint, coral, and glowing sky blue colors that are extremely gentle on the eyes.
+*   **Premium Custom Typography:** Styled using the elegant **Outfit** and **Quicksand** Google Fonts for a soft, friendly reading experience.
+*   **Custom Scrollbars:** Rounded, delicate scrollbars that match the dark theme aesthetics perfectly.
+*   **No Flicker Load:** Configured to load in dark mode instantly at the document root level.
 
 ### 📝 Complete Task Lifecycle (CRUD)
 *   **Smart Expandable Form:** A smooth collapsible task creation interface utilizing Framer Motion layout transitions.
@@ -35,12 +36,8 @@ Every feature in this app was thoughtfully selected and implemented to create th
 *   **Visual Progress Bar:** An animated, gradient-filled progress bar showing your current percentage completion.
 *   **Encouraging Captions:** Generates dynamic, cozy words of encouragement (e.g., *"Let's take a deep breath and start with a single, small step! 🌱"*, *"Look at you go! Over halfway there, you're doing amazing! 🌟"*) matching your current progress level.
 
-### 🌗 Cozy Dark Mode
-*   **Seamless Toggle:** A custom, animated theme button that transitions with a springy, rotating sun/moon icon.
-*   **Unified Styles:** Custom Tailwind CSS v4 theme colors transition elegantly across elements with a premium transition helper.
-
 ### 💾 Fully Persistent Storage
-*   **Auto-Save:** Powered by a custom React `useLocalStorage` hook to ensure your tasks, checklist statuses, and theme selection (Light vs. Dark) remain exactly as you left them after a page refresh.
+*   **Auto-Save:** Powered by a custom React `useLocalStorage` hook to ensure your tasks and checklist statuses remain exactly as you left them, even after closing the browser or refreshing the page.
 
 ---
 
@@ -62,7 +59,7 @@ Here is how the project components are structured:
 src/
 ├── components/
 │   ├── EmptyState.jsx      # Cozy empty-state illustrations and messages
-│   ├── Header.jsx          # App logo, time-greeting manager, and Dark Mode switch
+│   ├── Header.jsx          # App logo, time-greeting manager, and Cozy Dark Mode badge
 │   ├── StatsCard.jsx       # Completion progress and dynamic encouragement quotes
 │   ├── TaskFilters.jsx     # Tabs for filtering tasks (All, Active, Completed)
 │   ├── TaskForm.jsx        # Smart expandable task input with custom fields
