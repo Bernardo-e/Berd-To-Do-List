@@ -2,6 +2,8 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark, .dark *));
+
 @theme {
   --font-sans: 'Quicksand', 'Outfit', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', 'Quicksand', system-ui, -apple-system, sans-serif;
