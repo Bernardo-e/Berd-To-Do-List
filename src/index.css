@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Quicksand', 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Quicksand', system-ui, -apple-system, sans-serif;
+  
+  /* Cozy Light Theme Colors */
+  --color-cozy-bg-light: #FDFBF7;
+  --color-cozy-card-light: #FFFFFF;
+  --color-cozy-text-primary-light: #3D348B;
+  --color-cozy-text-secondary-light: #7579E7;
+  
+  /* Cozy Dark Theme Colors */
+  --color-cozy-bg-dark: #18151F;
+  --color-cozy-card-dark: #221E2E;
+  --color-cozy-text-primary-dark: #F3E8EE;
+  --color-cozy-text-secondary-dark: #A594F4;
+
+  /* Cozy Accents */
+  --color-cozy-accent: #B8C0FF;
+  --color-cozy-accent-hover: #9FA8FF;
+  --color-cozy-pink: #FFD6FF;
+  --color-cozy-pink-dark: #FFB3FF;
+  --color-cozy-mint: #E8F5E9;
+  --color-cozy-mint-accent: #81C784;
+  --color-cozy-mint-dark: #2E7D32;
+  --color-cozy-coral: #FFADAD;
+  --color-cozy-coral-dark: #FF8B8B;
+  --color-cozy-yellow: #FDFFB6;
+  --color-cozy-sky: #CAFFBF;
+  --color-cozy-lavender: #E8AEFF;
+  --color-cozy-blue: #90E0EF;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-cozy-bg-light);
+  color: var(--color-cozy-text-primary-light);
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-x: hidden;
+}
+
+.dark body {
+  background-color: var(--color-cozy-bg-dark);
+  color: var(--color-cozy-text-primary-dark);
+}
+
+/* Reset vite scaffolded root styles */
+#root {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+  border-inline: none !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+}
+
+/* Custom Cozy Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E0D8;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #312B3F;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4CDBF;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #413952;
+}
+
+/* Input Styles */
+input, select, textarea {
+  font-family: var(--font-sans);
+}
+
+/* Bounce animation keyframe (fallback if Framer Motion isn't executing) */
+@keyframes cuteBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.animate-cute-bounce {
+  animation: cuteBounce 0.3s ease-in-out;
+}
+
+/* Premium Transition Helper for Theme Toggles */
+.cozy-transition {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
